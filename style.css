@@ -149,9 +149,10 @@ nav li {
     margin:0;
     justify-items: center;
     align-items: center;
-    width:100px;
-    height:45px;
+    width:110px;
+    height:60px;
     font-size: 0.8rem;
+    padding-left:0;
 }
 /*mobile optimization from Gemini because I'm bad at it*/
 /* This triggers when the screen is narrower than 600px */
