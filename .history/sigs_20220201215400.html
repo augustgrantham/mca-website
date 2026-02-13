@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mizzou Computing Association | Home </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link href="../assets/stylesheet.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="../assets/mca_logo.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <script src="../assets/script.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+
+
+<!-- Bootstrap navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+  <div class="container-fluid">
+    <a href="index.html"> <img src="../assets/mca_logo.png" id="mca-icon" class="d-none d-md-block"> </a>
+    <a class="navbar-brand" href="index.html">Mizzou Computing Association</a>
+    <button class="navbar-toggler backgroundAccent" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="sigs.html">SIGs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="involved.html">Get Involved!</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="executives.html">Executives</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="discord.html">Announcements</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<br>
+
+<body onload="loadSigs()">
+  <!-- Accordion start -->
+  <div id="sigDiv"></div>
+  <br>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="row align-items-start">
+        <div class="col">
+          <h4> Other Computing Organizations: </h4>
+          <ul id="orgs">
+            <li><a href="https://www.instagram.com/mudevelopher/?hl=en" target="_blank">DevelopHER</a></li>
+            <li><a href="https://missouri.campuslabs.com/engage/organization/upsilon-pi-epsilon" target="_blank">Mizzou UPE</a></li>
+            <li><a href="https://missouri.campuslabs.com/engage/organization/institute-of-electrical-engineers" target="_blank">Mizzou IEEE</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <h4 class="center"> Mizzou Computing Association © 2021 </h4>
+          <!-- social icons -->
+          <ul class="footersm">
+            <li>
+              <a class="social-icon" href="https://twitter.com/mizzoucomputing" target="_"><img class="social-img" src="../assets/socialMedia/Twitter.svg"></a>
+            </li>
+            <li>
+              <a class="social-icon" href="https://www.facebook.com/mizzouhackers/" target="_"><img class="social-img" src="../assets/socialMedia/facebook.svg"></a>
+            </li>
+            <li>
+              <a class="social-icon" href="https://www.instagram.com/mizzoucomputing/" target="_"><img class="social-img" src="../assets/socialMedia/instagram.svg"></a>
+            </li>
+          </ul>
+          <ul class="footersm">
+            <li>
+              <a class="social-icon" href="https://discord.gg/qXAmekBets" target="_"><img class="social-img social-img-centered" src="../assets/socialMedia/Discord-Logo+Wordmark-Color.svg"></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col center">
+          <h4>Join our Mailing List!</h4>
+          <!-- Begin MailChimp Signup Form -->
+          <link href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css" rel="stylesheet" type="text/css">
+          <div id="mc_embed_signup" class="z-depth-1">
+            <form action="//missouri.us15.list-manage.com/subscribe/post?u=550d4ed32df155f991916dddc&amp;id=00600004da" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+              <div id="mc_embed_signup_scroll">
+                <div class="center">
+                  <input class="email-input" type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required style="text-align:center;">
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_550d4ed32df155f991916dddc_00600004da" tabindex="-1" value=""></div>
+
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" style="background-color: #F1B82D;margin-left: auto; margin-right:auto;margin-top: .5rem;   "></div>
+              </div>
+            </form>
+          </div>
+          <!--End mc_embed_signup-->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- end of Footer Section -->
+</body>
+<script>
+  // Get the URL from the URL bar
+  const urlParams = new URLSearchParams(window.location.search);
+  // Extract the "sig" parameter from the URL (if it exists)
+  const myParam = urlParams.get('sig');
+  if (myParam != null) {
+    // If the "sig" parameter exists, assume it is the ID of an accordion
+    // Grab the accordion element with the id of the "sig" parameter
+    var accordion = document.getElementById(myParam)
+    // Make an Async call to the Bootstrap Collapse class and set toggle to true
+    var bsCollapse = new bootstrap.Collapse(accordion, {
+      toggle: false
+    })
+  }
+
+  function loadSigs() {
+    $.getJSON('./sigs.json', function(data) {
+      var sigsHTML = '';
+      data.forEach(SIG => {
+        sigsHTML += '<div class="accordion accordion-flush" id="SIG_accordion" style="display: flex; flex-direction: column; padding-top: 3%; padding-left: 3%; padding-right: 3%;"><div class="accordion-item" style="background-color: black;">';
+        sigsHTML += '<h1 class="accordion-header" id="header' + SIG.id + '"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#' + SIG.id + '" aria-expanded="false" aria-controls="' + SIG.id + '">' + SIG.name + '</button></h1><div id="' + SIG.id + '" class="accordion-collapse collapse" aria-labelledby="heading' + SIG.id + '" data-bs-parent="#SIG_accordion"><div class="accordion-body" style="background-color: #222121;">';
+        sigsHTML += '<h2>' + SIG.when + ', ' + SIG.where + '</h2>';
+        sigsHTML += '<h3>Lead By: ' + SIG.leadBy + '</h3>';
+        sigsHTML += '<p>' + SIG.description + '</p></div></div></div></div>';
+      })
+
+      console.log(sigsHTML);
+      $("#sigDiv").html(sigsHTML);
+    });
+
+  }
+</script></html>

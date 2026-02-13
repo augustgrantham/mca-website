@@ -1,0 +1,42 @@
+[
+  {
+    "id": "introToCs",
+    "name": "Intro to CS",
+    "when": "Mondays at 5 PM",
+    "where": "Lafferre C2205",
+    "leadBy": "Adam Menker",
+    "description": "This SIG will allow members who are new and old to the realm of computer science to refresh their memories or learn about the principles of what computer science entails."
+  },
+  {
+    "id": "webDevelopment",
+    "name": "Web Development",
+    "when": "Tuesdays at 5 PM",
+    "where": "Lafferre C2205",
+    "leadBy": "Erika Zhou & John McGinness",
+    "description": "The Web Development Special Interest Group is a mini-club to learn and code together and build web project(s). You may learn skills in programming languages such as HTML, CSS, and JavaScript; tools such as GitHub, Figma, and Replit; and frameworks such as Bootstrap. Also, you may gain experience with working in a team, prototyping, and visual design. No prior experience is needed to join; come online and code with us!"
+  },
+  {
+    "id": "virtualReality",
+    "name": "Virtual Reality",
+    "when": "Tuesdays at 6 PM",
+    "where": "Virtually",
+    "leadBy": "Stuart Aldrich",
+    "description": "The VR SIG is focused on engaging with and developing for Virtual Reality technologies."
+  },
+  {
+    "id": "interveiwPrep",
+    "name": "Interview Prep",
+    "when": "Wednesdays at 5 PM",
+    "where": "Lafferre W1004",
+    "leadBy": "Tyler Harsell & Jacob LaGesse",
+    "description": "The Interview Preparation special interest group is the perfect place for students interested in discovering new information about careers in the tech space. Topics covered within this SIG will include: the technical interview and common questions, the behavioral interview, career fair, landing your first job, types of careers in tech, technologies to explore, mock interviews"
+  },
+  {
+    "id": "muRobotics",
+    "name": "MU Robotics - ML/AI",
+    "when": "Thursdays at 6 PM",
+    "where": "Lafferre 3235",
+    "leadBy": "Chris Scully, Rico Jones, & Cameron Ellis",
+    "description": "In a collaboration with the MU Robotics org, the ML/AI SIG will have members dive into the making, maintaining, and piloting of robotics."
+  }
+]

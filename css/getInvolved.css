@@ -1,0 +1,13 @@
+.center-widgebot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-bottom: 1em;
+}
+
+.header {
+    text-align: center;
+    margin: 1em 0;
+    font-weight: bold;
+}
