@@ -56,11 +56,14 @@ body {
     font-family: monospace;
     height: 100vh;
     font-size: 1rem;
+    text-align: center;;
 }
 header {
     background-color: black;
-    padding-bottom:20px;
-    margin-bottom:5px
+    padding-bottom:30px;
+    margin-bottom:5px;
+    position:relative;
+    z-index: 10;
 }
 .titleBar {
     font-size: 2.5rem;
@@ -71,12 +74,20 @@ header {
     padding: 20px 20px 5px 20px;
     font-weight: 900;
 }
+
 .subTitle {
   color:whitesmoke;
   font-weight: 700;
   text-align: center;
   margin-bottom:10px;
   font-size:1rem;
+}
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer; /* Force the pointer finger to show */
 }
 .logo {
     justify-self: center;
@@ -86,7 +97,7 @@ header {
 .titleName {
     justify-self:center;
 }
-
+/*home page styling*/
 .mainContent {
   display:flex;
   flex-wrap:wrap;
@@ -125,8 +136,20 @@ footer {
     background-color: #bfc0c0;
     padding:30px;
     margin-bottom: 0;
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:20vw;
 }
 
+
+.footer-col.socials img {
+  height: 50px;
+}
+
+.icons {
+  display:flex;
+}
 a {
   color:black;
   text-decoration: none;
@@ -154,6 +177,67 @@ nav li {
     font-size: 0.8rem;
     padding-left:0;
 }
+
+/*executive page css*/
+.executiveContainer {
+  display: grid;
+  /* Stacks on mobile, 220px+ on desktop */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-items:center;
+  align-items: center;
+}
+/* Target cards specifically inside the executive container */
+/* Base card style override */
+.executiveContainer .contentWidget {
+  margin: 0; /* Remove the 20px margin from .contentWidget */
+  padding: 2rem 1rem;
+  height: auto; /* Remove fixed height for content flow */
+  height:100%;
+  width:225px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-bottom: 5px solid #ffb800; /* Subtle brand accent */
+}
+
+.contentWidget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
+}
+/* Circular, framed images */
+.executiveContainer img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  border: 4px solid #086788; /* Matching your brand blue */
+}
+
+/* Role title - subtle and uppercase */
+.execTitle {
+  font-size: 0.75rem !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #666;
+  margin-bottom: 10px;
+  order: 2; /* Moves title below the image but above name if you prefer */
+}
+
+/* Name - bold and prominent */
+p.execName {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #086788;
+  margin-top: 5px;
+  order: 3;
+  
+}
 /*mobile optimization from Gemini because I'm bad at it*/
 /* This triggers when the screen is narrower than 600px */
 @media (max-width: 600px) {
@@ -165,3 +249,35 @@ nav li {
   
 }/* This triggers when the screen is narrower than 600px */
 
+@media (max-width: 600px) {
+  .executiveContainer {
+    grid-template-columns: 1fr; /* Force single column */
+    padding: 1rem;
+  }
+  
+  .executiveContainer .contentWidget {
+    max-width: 100%; /* Ensure card takes full width of container */
+  }
+}
+
+/* Fix the link container to behave like a flexbox */
+.logo-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+/* Ensure the title text inherits the brand color even inside a link */
+.logo-link .titleName {
+    color: #ffbf00;
+    margin-top: 10px;
+}
+
+/* Update titleBar to handle the link properly */
+.titleBar {
+    padding: 20px 20px 5px 20px;
+    display: flex;
+    justify-content: center;
+}
