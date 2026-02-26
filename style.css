@@ -297,3 +297,74 @@ p.execName {
     background-color: #ffb800; /* Matching your brand yellow */
     color: black;
 }
+
+/* Container & Headers */
+.sigContainer { max-width: 1100px; margin: 0 auto; padding: 20px; }
+.sectionHeader { color: #ffbf00; margin: 40px 0 20px; text-align: center; font-size: 1.8rem; }
+
+/* Calendar Table Styling */
+.calendarWrapper {
+    background: whitesmoke;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin:10px;
+}
+
+.tableScroll { overflow-x: auto; } /* Key for mobile: allows swiping */
+
+.sigTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px;
+    min-width: 600px; /* Ensures calendar stays readable on small screens */
+}
+
+.sigTable th {
+    background: #006684;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.timeCol {
+    font-weight: 900;
+    color: #006684;
+    text-align: right;
+    width: 100px;
+}
+
+/* Event Blocks */
+.event {
+    background: #e0e0e0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-left: 5px solid #ffb800;
+    text-align: center;
+}
+
+.event span {
+    font-weight: 400;
+    font-size: 0.75rem;
+    display: block;
+    color: #666;
+}
+
+/* Detailed Grid */
+.sigGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.sig-card {
+    text-align: left;
+    margin: 0 !important;
+    max-height: none !important;
+    width:350px;
+}
+
+.sig-card h3 { color: #006684; margin-bottom: 5px; }
+.sig-lead { font-size: 0.8rem; color: #555; margin-top: 10px; border-top: 1px solid #ddd; padding-top: 5px; }
