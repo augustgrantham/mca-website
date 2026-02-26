@@ -281,3 +281,19 @@ p.execName {
     display: flex;
     justify-content: center;
 }
+
+.devpost-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #006684; /* Matching your logo blue */
+    color: white;
+    border-radius: 5px;
+    font-weight: 900;
+    transition: background-color 0.2s;
+}
+
+.devpost-button:hover {
+    background-color: #ffb800; /* Matching your brand yellow */
+    color: black;
+}
