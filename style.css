@@ -46,83 +46,132 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 /* end of Josh's reset*/
+
 html {
   font-size: clamp(0.875rem, 0.5vw + 0.75rem, 1.125rem);
 }
+
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    background-color: #086788;
-    display:grid;
-    grid-template-rows:auto 1fr auto;
-    font-family: monospace;
-    height: 100vh;
-    font-size: 1rem;
-    text-align: center;;
+  background-color: #086788;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  font-family: monospace;
+  min-height: 100vh; /* changed from height so content can grow */
+  font-size: 1rem;
+  text-align: center;
 }
+
+/* ── HEADER ── */
 header {
-    background-color: black;
-    padding-bottom:30px;
-    margin-bottom:5px;
-    position:relative;
-    z-index: 10;
+  background-color: black;
+  padding-bottom: 30px;
+  margin-bottom: 5px;
+  position: relative;
+  z-index: 10;
 }
+
 .titleBar {
-    font-size: 2.5rem;
-    display:grid;
-    grid-template-columns: 1fr; /* Stack logo and title */
-    text-align: center;
-    color:#ffbf00;
-    padding: 20px 20px 5px 20px;
-    font-weight: 900;
+  font-weight: 900;
+  font-size: clamp(1.6rem, 5vw, 2.5rem); /* scales on mobile */
+  color: #ffbf00;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px 20px 5px 20px;
 }
 
 .subTitle {
-  color:whitesmoke;
+  color: whitesmoke;
   font-weight: 700;
   text-align: center;
-  margin-bottom:10px;
-  font-size:1rem;
-}
-.logo-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer; /* Force the pointer finger to show */
-}
-.logo {
-    justify-self: center;
-    clip-path: circle();
+  margin-bottom: 10px;
+  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  padding: 0 16px; /* prevents edge-to-edge text on narrow screens */
 }
 
-.titleName {
-    justify-self:center;
+.logo-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
 }
-/*home page styling*/
+
+.logo-link .titleName {
+  color: #ffbf00;
+  margin-top: 10px;
+}
+
+.logo {
+  justify-self: center;
+  clip-path: circle();
+}
+
+/* ── NAV ── */
+nav ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  width: 100%;
+  height: 55px;
+  display: flex;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ── MAIN CONTENT ── */
 .mainContent {
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-  padding:20px;
-  width:100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+  width: 100%;
   max-width: 1200px;
-  margin-inline:auto;
+  margin-inline: auto;
 }
+
 .contentWidget {
-    flex: 1 1 300px;
-    max-width:400px;
-    font-size:1rem;
-    font-weight: 600;
-    background-color:whitesmoke;
-    margin:20px;
-    padding:20px;
-    max-height: 400px;
-    justify-self: center;
-    border-radius:10px;
+  flex: 1 1 260px; /* slightly smaller min so 3 fit sooner */
+  max-width: 400px;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: whitesmoke;
+  margin: 10px; /* reduced from 20px so they don't overflow on mobile */
+  padding: 20px;
+  max-height: 400px;
+  justify-self: center;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contentWidget:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
 }
 
 .contentWidget h2 {
-  font-size: 1.5rem;;
+  font-size: 1.5rem;
   text-align: center;
   margin-bottom: 1em;
 }
@@ -131,240 +180,276 @@ header {
   font-weight: 500;
   font-size: 1rem;
 }
-footer {
-    align-self: end;
-    background-color: #bfc0c0;
-    padding:30px;
-    margin-bottom: 0;
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    gap:20vw;
-}
 
+/* ── FOOTER ── */
+footer {
+  align-self: end;
+  background-color: #bfc0c0;
+  padding: 30px 20px; /* added horizontal padding */
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap; /* wraps columns on narrow screens */
+  gap: 40px; /* fixed: was 20vw which is huge on mobile */
+}
 
 .footer-col.socials img {
   height: 50px;
 }
 
 .icons {
-  display:flex;
-}
-a {
-  color:black;
-  text-decoration: none;
-}
-nav ul {
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    justify-items: center;
-    list-style: none;
-    max-width: 600px;
-    margin-inline:auto;
-    padding: 0;
-}
-nav li {
-    display: grid;
-    background-color:whitesmoke;
-    border-radius:10px;
-    margin-top:20px;
-    font-weight: 900;
-    margin:0;
-    justify-items: center;
-    align-items: center;
-    width:110px;
-    height:60px;
-    font-size: 0.8rem;
-    padding-left:0;
+  display: flex;
+  gap: 10px;
 }
 
-/*executive page css*/
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* ── EXECUTIVES PAGE ── */
 .executiveContainer {
   display: grid;
-  /* Stacks on mobile, 220px+ on desktop */
-  grid-template-columns: repeat(3, 1fr); 
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   padding: 1.5rem;
   max-width: 1200px;
   margin: 0 auto;
-  justify-items:center;
+  justify-items: center;
   align-items: center;
 }
-/* Target cards specifically inside the executive container */
-/* Base card style override */
+
 .executiveContainer .contentWidget {
-  margin: 0; /* Remove the 20px margin from .contentWidget */
+  margin: 0;
   padding: 2rem 1rem;
-  height: auto; /* Remove fixed height for content flow */
-  height:100%;
-  width:225px;
+  height: 100%;
+  width: 225px;
+  max-height: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-  border-bottom: 5px solid #ffb800; /* Subtle brand accent */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-bottom: 5px solid #ffb800;
 }
 
-.contentWidget:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-}
-/* Circular, framed images */
 .executiveContainer img {
   width: 120px;
   height: 120px;
   object-fit: cover;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 4px solid #086788; /* Matching your brand blue */
+  border: 4px solid #086788;
 }
 
-/* Role title - subtle and uppercase */
 .execTitle {
   font-size: 0.75rem !important;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #666;
   margin-bottom: 10px;
-  order: 2; /* Moves title below the image but above name if you prefer */
+  order: 2;
 }
 
-/* Name - bold and prominent */
 p.execName {
   font-size: 1.2rem;
   font-weight: 900;
   color: #086788;
   margin-top: 5px;
   order: 3;
-  
-}
-/*mobile optimization from Gemini because I'm bad at it*/
-/* This triggers when the screen is narrower than 600px */
-@media (max-width: 600px) {
-  nav ul {
-    grid-template-columns: 1fr; /* Stack them in 1 column */
-    gap: 10px; /* Add some space between the stacked buttons */
-  }
-
-  
-}/* This triggers when the screen is narrower than 600px */
-
-@media (max-width: 600px) {
-  .executiveContainer {
-    grid-template-columns: 1fr; /* Force single column */
-    padding: 1rem;
-  }
-  
-  .executiveContainer .contentWidget {
-    max-width: 100%; /* Ensure card takes full width of container */
-  }
 }
 
-/* Fix the link container to behave like a flexbox */
-.logo-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    width: 100%;
-}
-
-/* Ensure the title text inherits the brand color even inside a link */
-.logo-link .titleName {
-    color: #ffbf00;
-    margin-top: 10px;
-}
-
-/* Update titleBar to handle the link properly */
-.titleBar {
-    padding: 20px 20px 5px 20px;
-    display: flex;
-    justify-content: center;
-}
-
+/* ── DEVPOST BUTTON ── */
 .devpost-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #006684; /* Matching your logo blue */
-    color: white;
-    border-radius: 5px;
-    font-weight: 900;
-    transition: background-color 0.2s;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #006684;
+  color: white;
+  border-radius: 5px;
+  font-weight: 900;
+  transition: background-color 0.2s;
 }
 
 .devpost-button:hover {
-    background-color: #ffb800; /* Matching your brand yellow */
-    color: black;
+  background-color: #ffb800;
+  color: black;
 }
 
-/* Container & Headers */
-.sigContainer { max-width: 1100px; margin: 0 auto; padding: 20px; }
-.sectionHeader { color: #ffbf00; margin: 40px 0 20px; text-align: center; font-size: 1.8rem; }
+/* ── SIG PAGE ── */
+.sigContainer {
+  max-width: 1100px;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
 
-/* Calendar Table Styling */
+.sigContainer > * {
+  width: 100%;
+}
+
+.sigContainer img {
+  width:100%;
+  border-radius: 10px;;
+}
+.pageTitle {
+  color: #ffbf00;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.sectionHeader {
+  color: #ffbf00;
+  margin: 40px auto;
+  text-align: center;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  width: 100%;
+}
+
 .calendarWrapper {
-    background: whitesmoke;
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    margin:10px;
+  background: whitesmoke;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  width:80%;
 }
 
-.tableScroll { overflow-x: auto; } /* Key for mobile: allows swiping */
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+}
 
 .sigTable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 10px;
-    min-width: 600px; /* Ensures calendar stays readable on small screens */
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 10px;
+  min-width: 600px;
 }
 
 .sigTable th {
-    background: #006684;
-    color: white;
-    padding: 15px;
-    border-radius: 8px;
+  background: #006684;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 .timeCol {
-    font-weight: 900;
-    color: #006684;
-    text-align: right;
-    width: 100px;
+  font-weight: 900;
+  color: #006684;
+  text-align: right;
+  width: 100px;
 }
 
-/* Event Blocks */
 .event {
-    background: #e0e0e0;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    border-left: 5px solid #ffb800;
-    text-align: center;
+  background: #e0e0e0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-left: 5px solid #ffb800;
+  text-align: center;
 }
 
 .event span {
-    font-weight: 400;
-    font-size: 0.75rem;
-    display: block;
-    color: #666;
+  font-weight: 400;
+  font-size: 0.75rem;
+  display: block;
+  color: #666;
 }
 
-/* Detailed Grid */
 .sigGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
 }
 
 .sig-card {
-    text-align: left;
-    margin: 0 !important;
-    max-height: none !important;
-    width:350px;
+  text-align: left;
+  margin: 0 auto !important;
+  max-height: none !important;
+  width: 100%;
+  max-width: 350px;
 }
 
-.sig-card h3 { color: #006684; margin-bottom: 5px; }
-.sig-lead { font-size: 0.8rem; color: #555; margin-top: 10px; border-top: 1px solid #ddd; padding-top: 5px; }
+.sig-card h3 {
+  color: #006684;
+  margin-bottom: 5px;
+}
+
+.sig-lead {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 5px;
+}
+
+/* ════════════════════════════
+   MOBILE BREAKPOINTS
+════════════════════════════ */
+
+@media (max-width: 700px) {
+  .sigContainer {
+    justify-content: center;
+  }
+  .sigGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  gap: 15px;
+}
+.sig-card {
+  width: 90%;
+  margin:10px;
+}
+  /* Nav: single column stack */
+  nav ul {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* Footer: stack columns vertically */
+  footer {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  /* Executive grid: single column */
+  .executiveContainer {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  /* Exec cards: full width */
+  .executiveContainer .contentWidget {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* Main content widgets fill the screen */
+  .contentWidget {
+    flex: 1 1 100%;
+    max-width: 100%;
+    margin: 0;
+    max-height: none; /* let content breathe */
+  }
+
+  .mainContent {
+    padding: 12px;
+    gap: 12px;
+  }
+}
+
+@media (min-width: 701px) and (max-width: 900px) {
+  /* Executive grid: 2 columns on tablet */
+  .executiveContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
