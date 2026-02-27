@@ -58,16 +58,12 @@ html, body {
   padding: 0;
 }
 
-html {
-  scrollbar-gutter: stable;
-}
-
 body {
   background-color: #086788;
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-family: monospace;
-  min-height: 100vh; /* changed from height so content can grow */
+  min-height: 100dvh; /* changed from height so content can grow */
   font-size: 1rem;
   text-align: center;
 }
@@ -77,7 +73,6 @@ header {
   background-color: black;
   padding-bottom: 30px;
   margin-bottom: 5px;
-  position: relative;
   z-index: 10;
 }
 
@@ -295,9 +290,6 @@ p.execName {
   width: 100%;
 }
 
-.sigContainer img {
-  border-radius: 10px;
-}
 .pageTitle {
   color: #ffbf00;
   font-size: clamp(1.8rem, 5vw, 2.5rem);
@@ -307,7 +299,7 @@ p.execName {
 
 .sectionHeader {
   color: #ffbf00;
-  margin: 40px auto;
+  margin: 40px auto
   text-align: center;
   font-size: clamp(1.4rem, 4vw, 1.8rem);
   width: 100%;
